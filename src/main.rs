@@ -21,6 +21,6 @@ fn main() {
         if let Err(e) = fichiers::write_primes_to_file(&primes, &format!("primes_{}.txt", primes.len())) {
             eprintln!("Erreur lors de l'écriture des nombres premiers dans le fichier: {}", e);
         } else {
-            println!("Les nombres premiers ont été écrits dans le fichier primes.txt");
+            println!("Les nombres premiers ont été écrits dans le fichier primes_{}.txt", primes.len());
         }
 }
