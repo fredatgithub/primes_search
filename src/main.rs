@@ -10,9 +10,10 @@ fn main() {
         }
     }
 
-    let end_number = 1_000_000_000;
+    let start_number = 79_008_140_801;
+    let end_number = 79_018_140_801;
 
-    for nombre in 1..=end_number {
+    for nombre in start_number..=end_number {
         if prime_library::is_prime_u128(nombre) {
             println!("{} est un nombre premier.", nombre);
             primes.push(nombre as u128);
