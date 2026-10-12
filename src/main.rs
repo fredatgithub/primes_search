@@ -10,7 +10,9 @@ fn main() {
         }
     }
 
-    for nombre in 1..=100_000_000 {
+    let end_number = 1_000_000_000;
+
+    for nombre in 1..=end_number {
         if prime_library::is_prime_u128(nombre) {
             println!("{} est un nombre premier.", nombre);
             primes.push(nombre as u128);
@@ -18,9 +20,9 @@ fn main() {
     }
 
     // Write the primes to a file
-        if let Err(e) = fichiers::write_primes_to_file(&primes, &format!("primes_{}.txt", primes.len())) {
+        if let Err(e) = fichiers::write_primes_to_file(&primes, &format!("primes_{}.txt", end_number)) {
             eprintln!("Erreur lors de l'écriture des nombres premiers dans le fichier: {}", e);
         } else {
-            println!("Les nombres premiers ont été écrits dans le fichier primes_{}.txt", primes.len());
+            println!("Les nombres premiers ont été écrits dans le fichier primes_{}.txt", end_number);
         }
 }
